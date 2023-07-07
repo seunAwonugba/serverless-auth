@@ -1,7 +1,7 @@
 import type { AWS } from "@serverless/typescript";
 
 import hello from "@functions/hello";
-// import {} from "@functions/auth";
+import { signUp } from "@functions/auth";
 
 const serverlessConfiguration: AWS = {
     service: "serverless",
@@ -27,7 +27,7 @@ const serverlessConfiguration: AWS = {
         },
     },
     // import the function via paths
-    functions: { hello },
+    functions: { signUp },
 
     package: { individually: true },
     custom: {
