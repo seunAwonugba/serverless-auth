@@ -1,12 +1,10 @@
 import type { AWS } from "@serverless/typescript";
 
-import hello from "@functions/hello";
 import { signUp } from "@functions/auth";
 
 const serverlessConfiguration: AWS = {
     service: "serverless",
     frameworkVersion: "3",
-    // plugins: ["serverless-esbuild"],
     plugins: [
         "serverless-esbuild",
         "serverless-plugin-typescript",
