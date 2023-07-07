@@ -9,8 +9,9 @@ const serverlessConfiguration: AWS = {
     // plugins: ["serverless-esbuild"],
     plugins: [
         "serverless-esbuild",
-        "serverless-offline",
+        "serverless-plugin-typescript",
         "serverless-dynamodb-local",
+        "serverless-offline",
     ],
 
     provider: {
@@ -53,10 +54,10 @@ const serverlessConfiguration: AWS = {
 
     resources: {
         Resources: {
-            User: {
+            usersTable: {
                 Type: "AWS::DynamoDB::Table",
                 Properties: {
-                    TableName: "User",
+                    TableName: "usersTable",
                     AttributeDefinitions: [
                         {
                             AttributeName: "userId",
